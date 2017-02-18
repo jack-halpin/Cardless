@@ -1,22 +1,18 @@
 package com.hackathon.cardless;
 
 import android.app.Activity;
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.NfcEvent;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +36,7 @@ public class PaymentActivity extends Activity
     private EditText txtBoxAddMessage;
     private TextView txtReceivedMessages;
     private TextView txtMessagesToSend;
+    private ImageView nfcImage;
 
     public void addMessage(View view) {
         String newMessage = txtBoxAddMessage.getText().toString();
@@ -62,7 +59,7 @@ public class PaymentActivity extends Activity
             }
         }
 
-        txtReceivedMessages.setText("Messages Received:\n");
+        //txtReceivedMessages.setText("Messages Received:\n");
         //Populate our list of messages we have received
         if (messagesReceivedArray.size() > 0) {
             for (int i = 0; i < messagesReceivedArray.size(); i++) {
@@ -94,9 +91,11 @@ public class PaymentActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
+        nfcImage = (ImageView) findViewById(R.id.nfc_image);
+        nfcImage.setImageResource(R.drawable.nfc_touch);
         txtBoxAddMessage = (EditText) findViewById(R.id.txtBoxAddMessage);
 //        txtMessagesToSend = (TextView) findViewById(R.id.txtMessageToSend);
-        txtReceivedMessages = (TextView) findViewById(R.id.txtMessagesReceived);
+       // txtReceivedMessages = (TextView) findViewById(R.id.txtMessagesReceived);
 //        Button btnAddMessage = (Button) findViewById(R.id.buttonAddMessage);
 
 //        btnAddMessage.setText("Add Message");

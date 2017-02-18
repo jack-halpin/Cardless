@@ -11,21 +11,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.hackathon.cardless.MainActivity">
 
-    <TextView
-        android:id="@+id/txtMessagesReceived"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"/>
+    <!--<TextView-->
+        <!--android:id="@+id/txtMessagesReceived"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="test"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentRight="true"/>-->
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         app:srcCompat="@drawable/nfc_touch"
+        android:id="@+id/nfc_image"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"
-        android:id="@+id/imageView2"
+
+
+
         android:layout_above="@+id/txtBoxAddMessage" />
 
     <EditText
