@@ -3,6 +3,7 @@ package com.hackathon.cardless;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -12,7 +13,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
     }
 
-    public void paymentOnClick(){
+    public void paymentOnClick(View view){
         Intent intent = new Intent(this, PaymentActivity.class);
         startActivity(intent);
     }
