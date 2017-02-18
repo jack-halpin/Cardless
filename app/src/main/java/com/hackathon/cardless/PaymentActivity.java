@@ -53,7 +53,7 @@ public class PaymentActivity extends Activity
 
 
     private  void updateTextViews() {
-        txtMessagesToSend.setText("Messages To Send:\n");
+//        txtMessagesToSend.setText("Messages To Send:\n");
         //Populate Our list of messages we want to send
         if(messagesToSendArray.size() > 0) {
             for (int i = 0; i < messagesToSendArray.size(); i++) {
@@ -95,12 +95,12 @@ public class PaymentActivity extends Activity
         setContentView(R.layout.activity_payment);
 
         txtBoxAddMessage = (EditText) findViewById(R.id.txtBoxAddMessage);
-        txtMessagesToSend = (TextView) findViewById(R.id.txtMessageToSend);
+//        txtMessagesToSend = (TextView) findViewById(R.id.txtMessageToSend);
         txtReceivedMessages = (TextView) findViewById(R.id.txtMessagesReceived);
-        Button btnAddMessage = (Button) findViewById(R.id.buttonAddMessage);
+//        Button btnAddMessage = (Button) findViewById(R.id.buttonAddMessage);
 
-        btnAddMessage.setText("Add Message");
-        updateTextViews();
+//        btnAddMessage.setText("Add Message");
+//        updateTextViews();
         handleNfcIntent(getIntent());
 
         //Check if NFC is available on device
