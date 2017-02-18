@@ -17,4 +17,9 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PaymentActivity.class);
         startActivity(intent);
     }
+
+    public void transactionOnClick(View view){
+        Intent intent = new Intent(this, TransactionActivity.class);
+        startActivity(intent);
+    }
 }
