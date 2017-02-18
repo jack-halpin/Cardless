@@ -10,28 +10,34 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.hackathon.cardless.MenuActivity"
+    android:background="#284FA3"
     >
 
-    <ImageView
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="100dp"
+        android:text="cardless"
+        android:textColor="#FFFFFF"
+        android:textSize="60dp"
+        android:gravity="center"></TextView>
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
-
+        android:backgroundTint="@color/colorAccent"
         android:layout_centerInParent="true"
         android:text="Make a Payment"
         android:id="@+id/payment_button"
+        android:textColor="#FFFFFF"
         android:onClick="paymentOnClick"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
-
+        android:backgroundTint="@color/colorAccent"
         android:layout_centerInParent="true"
         android:text="View Transactions"
+        android:textColor="#FFFFFF"
         android:id="@+id/transaction_button"
         android:onClick="transactionOnClick"
         />
