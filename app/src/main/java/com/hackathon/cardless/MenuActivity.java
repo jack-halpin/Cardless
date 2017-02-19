@@ -22,4 +22,14 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, TransactionActivity.class);
         startActivity(intent);
     }
+
+    public void accountOnClick(View view){
+
+    }
+
+    public void logoutOnClick(View view){
+        Intent intent = new Intent(this, LogoutActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

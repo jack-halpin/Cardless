@@ -19,24 +19,24 @@
         <!--android:layout_alignParentEnd="true"-->
         <!--android:layout_alignParentRight="true"/>-->
 
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="300dp"
         app:srcCompat="@drawable/nfc_touch"
         android:id="@+id/nfc_image"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
 
 
+        android:layout_marginTop="61dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
-        android:layout_above="@+id/txtBoxAddMessage" />
-
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="touch receiver"
-        android:ems="10"
+
+        android:text="Touch Paypad"
+        android:textSize="40dp"
         android:gravity="center"
         android:id="@+id/txtBoxAddMessage"
         android:layout_alignParentBottom="true"/>

@@ -1,6 +1,8 @@
 package com.hackathon.cardless;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,11 +46,20 @@ public class TransactionAdapter extends ArrayAdapter<Transaction> {
             TextView transDate = (TextView) view.findViewById(R.id.trans_date);
             TextView transRef = (TextView) view.findViewById(R.id.trans_ref);
             TextView transAmount = (TextView) view.findViewById(R.id.trans_amount);
+            TextView transBalance = (TextView) view.findViewById(R.id.trans_balance);
+
 
             //Populate them based on information stored in the currevent EventListing object
-            transDate.setText(trans.getDate());
+            transDate.setText(Integer.toString(trans.getDate().getDate()) + "/" + Integer.toString(trans.getDate().getMonth() + 1));
             transRef.setText(trans.getReference());
             transAmount.setText(Double.toString(trans.getAmount()));
+            if (trans.getAmount() >= 0){
+                transAmount.setTextColor(Color.parseColor("#00b300"));
+            }
+            else{
+                transAmount.setTextColor(Color.parseColor("#cc3300"));
+            }
+            transBalance.setText(Double.toString(trans.getBalance()));
         }
 
         return view;

@@ -8,17 +8,28 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_weight="0.5"
+        android:gravity="center"
         android:id="@+id/trans_date"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_weight="0.5"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
         android:id="@+id/trans_ref"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_weight="0.5"
+        android:gravity="center"
         android:id="@+id/trans_amount"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:id="@+id/trans_balance"/>
 </LinearLayout>
