@@ -10,12 +10,12 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
+//import com.github.mikephil.charting.charts.BarChart;
+//import com.github.mikephil.charting.charts.LineChart;
+//import com.github.mikephil.charting.data.BarData;
+//import com.github.mikephil.charting.data.Entry;
+//import com.github.mikephil.charting.data.LineData;
+//import com.github.mikephil.charting.data.LineDataSet;
 
 import org.json.JSONArray;
 import org.json.JSONException;

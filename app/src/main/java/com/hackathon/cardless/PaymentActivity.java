@@ -33,31 +33,32 @@ public class PaymentActivity extends Activity
     private ArrayList<String> messagesReceivedArray = new ArrayList<>();
 
     //Text boxes to add and display our messages
-    private EditText txtBoxAddMessage;
+    private TextView txtBoxAddMessage;
     private TextView txtReceivedMessages;
     private TextView txtMessagesToSend;
     private ImageView nfcImage;
+    private String message;
 
-    public void addMessage(View view) {
-        String newMessage = txtBoxAddMessage.getText().toString();
-        messagesToSendArray.add(newMessage);
-
-        txtBoxAddMessage.setText(null);
-        updateTextViews();
-
-        Toast.makeText(this, "Added Message", Toast.LENGTH_LONG).show();
-    }
+//    public void addMessage(View view) {
+//        String newMessage = txtBoxAddMessage.getText().toString();
+//        messagesToSendArray.add(newMessage);
+//
+//        txtBoxAddMessage.setText(null);
+//        updateTextViews();
+//
+//        Toast.makeText(this, "Added Message", Toast.LENGTH_LONG).show();
+//    }
 
 
     private  void updateTextViews() {
 //        txtMessagesToSend.setText("Messages To Send:\n");
         //Populate Our list of messages we want to send
-        if(messagesToSendArray.size() > 0) {
-            for (int i = 0; i < messagesToSendArray.size(); i++) {
-                txtMessagesToSend.append(messagesToSendArray.get(i));
-                txtMessagesToSend.append("\n");
-            }
-        }
+//        if(messagesToSendArray.size() > 0) {
+//            for (int i = 0; i < messagesToSendArray.size(); i++) {
+//                txtMessagesToSend.append(messagesToSendArray.get(i));
+//                txtMessagesToSend.append("\n");
+//            }
+//        }
 
         //txtReceivedMessages.setText("Messages Received:\n");
         //Populate our list of messages we have received
@@ -90,10 +91,16 @@ public class PaymentActivity extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+        
+        messagesToSendArray.add("00001234");
+        messagesToSendArray.add("College Fund");
+        messagesToSendArray.add("600.1");
+        messagesToSendArray.add("GBP");
+
 
         nfcImage = (ImageView) findViewById(R.id.nfc_image);
         nfcImage.setImageResource(R.drawable.nfc_touch);
-        txtBoxAddMessage = (EditText) findViewById(R.id.txtBoxAddMessage);
+        txtBoxAddMessage = (TextView) findViewById(R.id.txtBoxAddMessage);
 //        txtMessagesToSend = (TextView) findViewById(R.id.txtMessageToSend);
        // txtReceivedMessages = (TextView) findViewById(R.id.txtMessagesReceived);
 //        Button btnAddMessage = (Button) findViewById(R.id.buttonAddMessage);
@@ -147,8 +154,6 @@ public class PaymentActivity extends Activity
     }
 
 
-
-
     public NdefRecord[] createRecords() {
         NdefRecord[] records = new NdefRecord[messagesToSendArray.size() + 1];
         //To Create Messages Manually if API is less than
@@ -196,6 +201,12 @@ public class PaymentActivity extends Activity
                     //Make sure we don't pass along our AAR (Android Application Record)
                     if (string.equals(getPackageName())) { continue; }
                     messagesReceivedArray.add(string);
+                }
+
+                for (int i = 0; i < messagesReceivedArray.size(); i++) {
+                    message = messagesReceivedArray.get(i);
+                    TextView txtView = (TextView) findViewById(R.id.txtBoxAddMessage);
+                    txtView.setText(message);
                 }
                 Toast.makeText(this, "Received " + messagesReceivedArray.size() +
                         " Messages", Toast.LENGTH_LONG).show();
