@@ -60,12 +60,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:backgroundTint="#f44242"
+        android:backgroundTint="@color/colorAccent"
         android:layout_centerInParent="true"
-        android:text="Logout"
-        android:id="@+id/logout_button"
+        android:text="Send Money"
+        android:id="@+id/sendmoney_button"
         android:textColor="#FFFFFF"
-        android:onClick="logoutOnClick"
+        android:onClick="sendmoneyOnClick"
         />
 
 </LinearLayout>

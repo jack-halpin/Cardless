@@ -27,8 +27,8 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    public void logoutOnClick(View view){
-        Intent intent = new Intent(this, LogoutActivity.class);
+    public void sendmoneyOnClick(View view){
+        Intent intent = new Intent(this, SendmoneyActivity.class);
         startActivity(intent);
         finish();
     }

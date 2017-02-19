@@ -103,7 +103,7 @@ public class TransactionActivity extends AppCompatActivity {
             //Next need to construct the URL string used to query the API
             try {
                 //Define the base url that contains the API key for the application
-                String base_url = "https://bluebank.azure-api.net/api/v0.7/accounts/7d50e4f6-1047-476b-a4f9-063e6bb8b396/transactions?limit=20";
+                String base_url = "https://bluebank.azure-api.net/api/v0.7/accounts/7d50e4f6-1047-476b-a4f9-063e6bb8b396/transactions?limit=20&sortOrder=-transactionDateTime";
 
 
 

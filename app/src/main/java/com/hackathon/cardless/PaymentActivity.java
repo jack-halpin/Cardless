@@ -33,7 +33,7 @@ public class PaymentActivity extends Activity
     private ArrayList<String> messagesReceivedArray = new ArrayList<>();
 
     //Text boxes to add and display our messages
-    private EditText txtBoxAddMessage;
+    private TextView txtBoxAddMessage;
     private TextView txtReceivedMessages;
     private TextView txtMessagesToSend;
     private ImageView nfcImage;
@@ -93,7 +93,7 @@ public class PaymentActivity extends Activity
 
         nfcImage = (ImageView) findViewById(R.id.nfc_image);
         nfcImage.setImageResource(R.drawable.nfc_touch);
-        txtBoxAddMessage = (EditText) findViewById(R.id.txtBoxAddMessage);
+        txtBoxAddMessage = (TextView) findViewById(R.id.txtBoxAddMessage);
 //        txtMessagesToSend = (TextView) findViewById(R.id.txtMessageToSend);
        // txtReceivedMessages = (TextView) findViewById(R.id.txtMessagesReceived);
 //        Button btnAddMessage = (Button) findViewById(R.id.buttonAddMessage);
