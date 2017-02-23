@@ -35,30 +35,11 @@ public class PaymentActivity extends Activity
     //Text boxes to add and display our messages
     private TextView txtBoxAddMessage;
     private TextView txtReceivedMessages;
-    private TextView txtMessagesToSend;
     private ImageView nfcImage;
     private String message;
 
-//    public void addMessage(View view) {
-//        String newMessage = txtBoxAddMessage.getText().toString();
-//        messagesToSendArray.add(newMessage);
-//
-//        txtBoxAddMessage.setText(null);
-//        updateTextViews();
-//
-//        Toast.makeText(this, "Added Message", Toast.LENGTH_LONG).show();
-//    }
-
 
     private  void updateTextViews() {
-//        txtMessagesToSend.setText("Messages To Send:\n");
-        //Populate Our list of messages we want to send
-//        if(messagesToSendArray.size() > 0) {
-//            for (int i = 0; i < messagesToSendArray.size(); i++) {
-//                txtMessagesToSend.append(messagesToSendArray.get(i));
-//                txtMessagesToSend.append("\n");
-//            }
-//        }
 
         //txtReceivedMessages.setText("Messages Received:\n");
         //Populate our list of messages we have received
@@ -101,12 +82,6 @@ public class PaymentActivity extends Activity
         nfcImage = (ImageView) findViewById(R.id.nfc_image);
         nfcImage.setImageResource(R.drawable.nfc_touch);
         txtBoxAddMessage = (TextView) findViewById(R.id.txtBoxAddMessage);
-//        txtMessagesToSend = (TextView) findViewById(R.id.txtMessageToSend);
-       // txtReceivedMessages = (TextView) findViewById(R.id.txtMessagesReceived);
-//        Button btnAddMessage = (Button) findViewById(R.id.buttonAddMessage);
-
-//        btnAddMessage.setText("Add Message");
-//        updateTextViews();
         handleNfcIntent(getIntent());
 
         //Check if NFC is available on device
