@@ -26,7 +26,7 @@ public class PaymentActivity extends Activity
         NfcAdapter.CreateNdefMessageCallback {
 
     private NfcAdapter mNfcAdapter;
-
+    public String tagId;
 
     //The array lists to hold our messages
     private ArrayList<String> messagesToSendArray = new ArrayList<>();
@@ -45,8 +45,12 @@ public class PaymentActivity extends Activity
         //Populate our list of messages we have received
         if (messagesReceivedArray.size() > 0) {
             for (int i = 0; i < messagesReceivedArray.size(); i++) {
-                txtReceivedMessages.append(messagesReceivedArray.get(i));
-                txtReceivedMessages.append("\n");
+                try {
+                    txtReceivedMessages.append(messagesReceivedArray.get(i));
+                    txtReceivedMessages.append("\n");
+                } catch (NullPointerException e) {
+                    //add catch statement here
+                }
             }
         }
     }
@@ -103,8 +107,38 @@ public class PaymentActivity extends Activity
     @Override
     public void onResume() {
         super.onResume();
-        updateTextViews();
-        handleNfcIntent(getIntent());
+
+        if (messagesReceivedArray.get(0).charAt(4) == messagesReceivedArray.get(0).charAt(8)) {
+            tagId = messagesReceivedArray.get(0).substring(3);
+//            new cardlessAPI().execute(tagId);
+
+            try {
+//                System.out.println("______________"+tagId+"_____________");
+                String info = new cardlessAPI().execute(tagId).get();
+
+                int firstComma = info.indexOf(',');
+                int secondComma = info.indexOf(',', firstComma+1);
+
+                String client = info.substring(3, firstComma-1);
+//                System.out.println("client" + client);
+                String amount = info.substring(firstComma+2, secondComma);
+//                System.out.println("amount" + amount);
+                String thk_message = info.substring(secondComma+2, info.length()-3);
+
+                String conf_message = client + " : $" + amount;
+                TextView tv1 = (TextView)findViewById(R.id.txtBoxAddMessage);
+                tv1.setText(conf_message);
+
+            } catch (java.util.concurrent.ExecutionException e) {
+                //add catch statement here
+            } catch (java.lang.InterruptedException e) {
+                //add catch statement here
+            }
+
+        } else {
+            updateTextViews();
+            handleNfcIntent(getIntent());
+        }
     }
 
 
